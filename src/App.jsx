@@ -3,6 +3,7 @@ import {
   ArrowRight, Heart, CalendarDays, Bell, Flower2, Menu, X, Play,
   ShieldCheck, Sparkles, Smartphone, Check, Clock3, ChartNoAxesCombined
 } from 'lucide-react';
+import Button from './components/Button';
 
 const features = [
   { icon: CalendarDays, title: 'Ciclo inteligente', text: 'Visualize seu ciclo e acompanhe previsões com base no seu histórico.' },
@@ -57,7 +58,14 @@ function App() {
           <a href="#como-funciona" onClick={closeMenu}>Como funciona</a>
           <a href="#privacidade" onClick={closeMenu}>Privacidade</a>
         </nav>
-        <a className="nav-cta" href="#conheca"><Smartphone size={18}/> Conheça o app</a>
+        <Button 
+          href="#conheca"
+          iconLeft={Smartphone}
+          
+          className="nav-cta"
+        >
+          Conheça o app
+        </Button>
       </div>
     </header>
 
@@ -68,8 +76,19 @@ function App() {
           <h1>Conheça seu ciclo.<br/><span>Cuide de você.</span></h1>
           <p className="hero-description">Acompanhe as fases do seu ciclo menstrual, receba lembretes e descubra formas de cuidar do seu bem-estar em cada fase.</p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#conheca"><Smartphone size={19}/> Descubra o Ela+ <ArrowRight size={18}/></a>
-            <a className="button button-outline" href="#funcionalidades"><Play size={17}/> Ver funcionalidades</a>
+            <Button
+              href="#conheca"
+              iconLeft={Smartphone}
+              iconRight={ArrowRight}
+              variant="primary"
+              className="btn btn-primary"
+            >Descubra o Ela+</Button>
+
+            <Button 
+              className="btn btn-outline" 
+              href="#funcionalidades"
+              iconLeft={Play}
+            >Ver funcionalidades</Button>
           </div>
           <div className="hero-note"><span/>Seu ciclo, no seu ritmo. Mais informação, mais cuidado.<span/></div>
         </div>
@@ -111,7 +130,14 @@ function App() {
           <div className="final-flower"><Flower2 size={38}/></div>
           <h2>Seu ciclo. Seu tempo. <span>Seu cuidado.</span></h2>
           <p>Conheça o Ela+ e dê mais espaço ao autocuidado na sua rotina.</p>
-          <a className="button button-light" href="https://github.com/Saullo-Programador/App_ElaMais" target="_blank" rel="noreferrer">Conheça o projeto <ArrowRight size={18}/></a>
+          <Button 
+            className="button button-light" 
+            href="https://github.com/Saullo-Programador/App_ElaMais" 
+            target="_blank" 
+            rel="noreferrer"
+          >
+            Conheça o projeto <ArrowRight size={18}/>
+          </Button>
           <small>O Ela+ é uma ferramenta de acompanhamento e informação, não substitui orientação profissional de saúde.</small>
         </div>
       </section>
