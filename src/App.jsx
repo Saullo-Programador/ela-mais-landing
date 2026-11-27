@@ -1,16 +1,47 @@
 import React from 'react';
 import {
   ArrowRight, Heart, CalendarDays, Bell, Flower2, Menu, X, Play,
-  ShieldCheck, Sparkles, Smartphone, Check, Clock3, ChartNoAxesCombined
+  ShieldCheck, Sparkles, Smartphone, Check, Clock3, ChartNoAxesCombined,
+  ClipboardList,
+  Users
 } from 'lucide-react';
 import Button from './components/Button';
+import FeatureStrip from "./components/FeatureStrip";
+
 
 const features = [
-  { icon: CalendarDays, title: 'Ciclo inteligente', text: 'Visualize seu ciclo e acompanhe previsões com base no seu histórico.' },
-  { icon: Flower2, title: 'Fases do ciclo', text: 'Entenda as etapas do ciclo e conheça melhor as mudanças do seu corpo.' },
-  { icon: Bell, title: 'Lembretes personalizados', text: 'Receba lembretes para acompanhar datas importantes e sua rotina.' },
-  { icon: Heart, title: 'Autocuidado', text: 'Encontre sugestões de cuidado e bem-estar para cada momento.' },
+  {
+    icon: CalendarDays,
+    title: "Ciclo inteligente",
+    text: "Visualize seu ciclo e acompanhe previsões com base no seu histórico."
+  },
+  {
+    icon: Flower2,
+    title: "Fases do ciclo",
+    text: "Entenda as etapas do ciclo e conheça melhor as mudanças do seu corpo."
+  },
+  {
+    icon: Bell,
+    title: "Lembretes personalizados",
+    text: "Receba lembretes para acompanhar datas importantes e sua rotina."
+  },
+  {
+    icon: Heart,
+    title: "Autocuidado",
+    text: "Encontre sugestões de cuidado e bem-estar para cada momento."
+  },
+  {
+    icon: Users,
+    title: "Cuidado compartilhado",
+    text: "Compartilhe informações e permita que seu parceiro participe dos cuidados."
+  },
+  {
+    icon: ClipboardList,
+    title: "Organização pessoal",
+    text: "Organize exames, medicamentos, aniversários e compromissos importantes."
+  },
 ];
+
 
 function Logo() {
   return <a className="brand" href="#inicio" aria-label="Ela+ - início">
@@ -95,12 +126,7 @@ function App() {
         <PhoneMockup />
       </section>
 
-      <section className="feature-strip container" id="funcionalidades">
-        {features.map(({icon: Icon, title, text}) => <article className="feature-card" key={title}>
-          <div className="feature-icon"><Icon size={27}/></div>
-          <div><h3>{title}</h3><p>{text}</p></div>
-        </article>)}
-      </section>
+      <FeatureStrip features={features} />
 
       <section className="intro-section" id="como-funciona">
         <div className="container intro-inner">
