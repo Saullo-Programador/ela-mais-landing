@@ -1,12 +1,13 @@
 import React from 'react';
 import {
   ArrowRight, Heart, CalendarDays, Bell, Flower2, Menu, X, Play,
-  ShieldCheck, Sparkles, Smartphone, Check, Clock3, ChartNoAxesCombined,
+  ShieldCheck, Sparkles, Smartphone, Check,
   ClipboardList,
   Users
 } from 'lucide-react';
 import Button from './components/Button';
 import FeatureStrip from "./components/FeatureStrip";
+import logoSrc from './assets/logo1_ElaMais.png';
 
 
 const features = [
@@ -45,8 +46,8 @@ const features = [
 
 function Logo() {
   return <a className="brand" href="#inicio" aria-label="Ela+ - início">
-    <span className="brand-mark"><Flower2 size={35} strokeWidth={1.8} /></span>
-    <span>Ela<span className="plus">+</span></span>
+    <span className="brand-mark"><img src={logoSrc} alt="Ela+" /></span>
+    <span>  Ela<span className="plus">+</span></span>
   </a>;
 }
 
@@ -56,7 +57,7 @@ function PhoneMockup() {
     <div className="phone">
       <div className="phone-notch" />
       <div className="phone-status"><span>9:41</span><span>● ● ▰</span></div>
-      <div className="phone-header"><span className="mini-logo"><Flower2 size={20}/> Ela+</span><span className="settings-dot">⚙</span></div>
+      <div className="phone-header"><span className="mini-logo"><span className="brand-mark"><img src={logoSrc} alt="Ela+" /></span> Ela+</span><span className="settings-dot">⚙</span></div>
       <div className="hello">Olá, Ana <span>🌸</span></div>
       <div className="cycle-card">
         <div><small>Seu ciclo hoje</small><strong>Dia 12</strong><em>Fase folicular</em></div>
