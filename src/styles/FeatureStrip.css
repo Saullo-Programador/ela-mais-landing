@@ -34,6 +34,6 @@
 
   .feature-strip > * {
     flex: 0 1 100%;
-    max-width: 400px;
+    max-width: 100%;
   }
 }
