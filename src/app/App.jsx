@@ -78,17 +78,34 @@ function PhoneMockup() {
 
 function App() {
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [activeSection, setActiveSection] = React.useState('inicio');
   const closeMenu = () => setMenuOpen(false);
+
+  React.useEffect(() => {
+    const sections = ['inicio', 'funcionalidades', 'como-funciona', 'privacidade', 'conheca'];
+    const onScroll = () => {
+      const y = window.scrollY + 120;
+      let current = 'inicio';
+      sections.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= y) current = id;
+      });
+      setActiveSection(current);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
   return <div className="site-shell" id="inicio">
     <header className="header">
       <div className="container nav-wrap">
         <Logo />
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Abrir menu">{menuOpen ? <X/> : <Menu/>}</button>
         <nav className={menuOpen ? 'nav-links open' : 'nav-links'}>
-          <a href="#inicio" onClick={closeMenu}>Início</a>
-          <a href="#funcionalidades" onClick={closeMenu}>Funcionalidades</a>
-          <a href="#como-funciona" onClick={closeMenu}>Como funciona</a>
-          <a href="#privacidade" onClick={closeMenu}>Privacidade</a>
+          <a href="#inicio" className={activeSection === 'inicio' ? 'active' : ''} onClick={closeMenu}>Início</a>
+          <a href="#funcionalidades" className={activeSection === 'funcionalidades' ? 'active' : ''} onClick={closeMenu}>Funcionalidades</a>
+          <a href="#como-funciona" className={activeSection === 'como-funciona' ? 'active' : ''} onClick={closeMenu}>Como funciona</a>
+          <a href="#privacidade" className={activeSection === 'privacidade' ? 'active' : ''} onClick={closeMenu}>Privacidade</a>
         </nav>
         <Button 
           href="#conheca"
