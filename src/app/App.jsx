@@ -5,9 +5,9 @@ import {
   ClipboardList,
   Users
 } from 'lucide-react';
-import Button from './components/Button';
-import FeatureStrip from "./components/FeatureStrip";
-import logoSrc from './assets/logo1_ElaMais.png';
+import Button from '../components/Button/Button';
+import FeatureStrip from '../features/FeatureStrip';
+import logoSrc from '../assets/logo1_ElaMais.png';
 
 
 const features = [
@@ -57,7 +57,7 @@ function PhoneMockup() {
     <div className="phone">
       <div className="phone-notch" />
       <div className="phone-status"><span>9:41</span><span>● ● ▰</span></div>
-      <div className="phone-header"><span className="mini-logo"><span className="brand-mark"><img src={logoSrc} alt="Ela+" /></span> Ela+</span><span className="settings-dot">⚙</span></div>
+      <div className="phone-header"><span className="mini-logo"><span className="brand-mark-phone"><img src={logoSrc} alt="Ela+" /></span> Ela+</span><span className="settings-dot">⚙</span></div>
       <div className="hello">Olá, Ana <span>🌸</span></div>
       <div className="cycle-card">
         <div><small>Seu ciclo hoje</small><strong>Dia 12</strong><em>Fase folicular</em></div>

@@ -1,6 +1,6 @@
 
 import React from "react";
-import "../styles/FeatureCard.css";
+import "./FeatureCard.css";
 
 const FeatureCard = ({
   icon: Icon,

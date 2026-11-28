@@ -1,7 +1,7 @@
 
 import React from "react";
-import FeatureCard from "./FeatureCard";
-import "../styles/FeatureStrip.css";
+import FeatureCard from "../components/FeatureCard/FeatureCard";
+import "./FeatureStrip.css";
 
 const FeatureStrip = ({
   features = [],
